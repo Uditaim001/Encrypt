@@ -2,16 +2,7 @@ package com.example.encrypt;
 import java.util.Base64;
 public class Base64en {
     public static void main(String[] args) {
-        // Sample string to encode
-        String originalString = "Hello, World!";
 
-        // Encode the string
-        String encodedString = encodeToBase64(originalString);
-        System.out.println("Encoded: " + encodedString);
-
-        // Decode the string
-        String decodedString = decodeFromBase64(encodedString);
-        System.out.println("Decoded: " + decodedString);
     }
 
     // Method to encode a string to Base64

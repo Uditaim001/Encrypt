@@ -78,5 +78,36 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        SHA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(editText.length()>0){
+                    String text;
+                    int num;
+                    num=2;
+                    text=editText.getText().toString();
+                    Intent intent=new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("text",text);
+                    intent.putExtra("num",num);
+                    startActivity(intent);
+                }
+                else{
+//                    String text;
+//
+//                    Intent intent=new Intent(MainActivity.this, MainActivity2.class);
+//                    intent.putExtra("text","Not found");
+//                    startActivity(intent);
+                    Toast.makeText(MainActivity.this, "Please Enter something to encrypt", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        DEC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1=new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent1);
+            }
+        });
+
     }
 }

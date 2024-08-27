@@ -39,27 +39,5 @@ public class AES {
     }
 
     public static void main(String[] args) {
-//        try {
-//            // Generate a new AES key
-//            SecretKey secretKey = generateKey();
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                System.out.println("Generated Key: " + Base64.getEncoder().encodeToString(secretKey.getEncoded()));
-//            }
 //
-//            // Define the plaintext to encrypt
-//            String plainText = "Hello, World!";
-//            System.out.println("Plaintext: " + plainText);
-//
-//            // Encrypt the plaintext
-//            String encryptedText = encrypt(plainText, secretKey);
-//            System.out.println("Encrypted Text: " + encryptedText);
-//
-//            // Decrypt the encrypted text
-//            String decryptedText = decrypt(encryptedText, secretKey);
-//            System.out.println("Decrypted Text: " + decryptedText);
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 }}
