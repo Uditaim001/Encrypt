@@ -1,4 +1,5 @@
 package com.example.encrypt;
+import android.annotation.SuppressLint;
 import android.os.Build;
 
 import javax.crypto.Cipher;
@@ -17,27 +18,25 @@ public class AES {
     }
 
     // Method to encrypt data using AES
+
+
+    @SuppressLint("NewApi")
     public static String encrypt(String plainText, SecretKey key) throws Exception {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, key);
         byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return Base64.getEncoder().encodeToString(encryptedBytes);
-        }
-        return "Not found";
+        return Base64.getEncoder().encodeToString(encryptedBytes);
     }
 
     // Method to decrypt data using AES
+    @SuppressLint("NewApi")
     public static String decrypt(String encryptedText, SecretKey key) throws Exception {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, key);
         byte[] decryptedBytes = new byte[0];
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedText));
-        }
+        decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedText));
+
         return new String(decryptedBytes);
     }
 
-    public static void main(String[] args) {
-//
-}}
+    }
